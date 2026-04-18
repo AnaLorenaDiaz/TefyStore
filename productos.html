@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Completo | Tefy Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-[#FAF9F6] text-[#2D2D2D]">
+
+    <div class="bg-[#7A8974] text-white py-2 px-6 z-[60] relative text-center">
+        <span class="text-[10px] font-bold tracking-widest uppercase">Pago contra entrega | Envío gratis Lima y Callao</span>
+    </div>
+
+    <nav id="main-nav" class="sticky top-0 w-full z-50 bg-white border-b border-gray-100 transition-all duration-300">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex-shrink-0">
+                <a href="index.html">
+                    <img src="img/logo2.png" alt="Tefy Home Logo" class="h-10 w-auto lg:h-12 object-contain">
+                </a>
+            </div>
+            <div class="hidden md:flex space-x-8 font-medium text-sm uppercase tracking-widest">
+                <a href="index.html" class="hover:text-[#7A8974] transition">Inicio</a>
+                <a href="productos.html" class="hover:text-[#7A8974] transition">Productos</a>
+                <a href="contacto.html" class="hover:text-[#7A8974] transition">Contacto</a>
+            </div>
+            <div class="flex items-center space-x-5">
+                <button onclick="toggleCartModal()" class="relative text-2xl focus:outline-none">
+                    🛒 <span id="cart-count" class="absolute -top-2 -right-2 bg-[#D4A373] text-white text-[10px] rounded-full w-5 h-5 flex items-center justify-center hidden">0</span>
+                </button>
+                <button id="menu-open-btn" class="md:hidden text-2xl focus:outline-none">☰</button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="fixed inset-0 w-full h-full bg-white z-[10000] flex flex-col translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+            <div class="bg-white flex justify-between items-center p-6 border-b">
+                <span class="font-serif italic text-gray-400">Menú Principal</span>
+                <button id="menu-close-btn" class="text-4xl text-gray-400">&times;</button>
+            </div>
+            <div class="bg-white flex flex-col px-8 space-y-2 flex-grow">
+                <a href="index.html" class="mobile-link text-4xl font-serif py-6 border-b border-gray-50 text-gray-900">Inicio</a>
+                <a href="productos.html" class="mobile-link text-4xl font-serif py-6 border-b border-gray-50 text-gray-900">Productos</a>
+                <a href="contacto.html" class="mobile-link text-4xl font-serif py-6 border-b border-gray-50 text-gray-900">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="pt-12 pb-6 bg-white">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl md:text-5xl font-serif text-[#2D2D2D]">Nuestros Productos</h1>
+        </div>
+    </header>
+
+    <section class="sticky top-[65px] lg:top-[73px] z-40 bg-white border-y border-gray-100 py-4 shadow-sm">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            
+            <div class="flex flex-wrap items-center gap-4 w-full md:w-auto">
+                <div class="flex items-center gap-2">
+                    <label class="text-[10px] font-bold uppercase text-gray-400">Precio:</label>
+                    <select id="filter-price" onchange="applyFilters()" class="bg-gray-50 border border-gray-200 rounded-lg px-2 py-1 text-sm outline-none focus:border-[#7A8974]">
+                        <option value="all">Todos</option>
+                        <option value="low">Hasta S/ 50</option>
+                        <option value="mid">S/ 50 - S/ 150</option>
+                        <option value="high">Más de S/ 150</option>
+                    </select>
+                </div>
+                <div class="flex items-center gap-2">
+                    <label class="text-[10px] font-bold uppercase text-gray-400">Orden:</label>
+                    <select id="sort-order" onchange="applyFilters()" class="bg-gray-50 border border-gray-200 rounded-lg px-2 py-1 text-sm outline-none focus:border-[#7A8974]">
+                        <option value="az">A-Z</option>
+                        <option value="za">Z-A</option>
+                        <option value="price-asc">Precio: Menor a Mayor</option>
+                        <option value="price-desc">Precio: Mayor a Menor</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="text-[10px] font-bold uppercase tracking-widest text-[#7A8974] border-t md:border-t-0 pt-2 md:pt-0 w-full md:w-auto">
+                <span id="product-quantity">0</span> Productos encontrados
+            </div>
+        </div>
+    </section>
+
+    <main class="py-12">
+        <div class="container mx-auto px-6">
+            <div id="grid-todos-productos" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                </div>
+        </div>
+    </main>
+
+    <section id="pagina-detalle" class="fixed inset-0 bg-white z-[5000] hidden overflow-y-auto">
+        <div class="container mx-auto px-6 py-10 relative">
+            <button onclick="cerrarDetalle()" class="flex items-center gap-2 text-gray-500 mb-8 font-bold hover:text-black">← VOLVER</button>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="space-y-4">
+                    <img id="detalle-img-principal" src="" class="w-full aspect-square object-cover rounded-3xl shadow-lg border">
+                    <div id="detalle-miniaturas" class="grid grid-cols-5 gap-3"></div>
+                </div>
+                <div>
+                    <h1 id="detalle-titulo" class="text-4xl font-serif mb-4 text-[#2D2D2D]"></h1>
+                    <p id="detalle-precio-new" class="text-3xl text-[#7A8974] font-bold mb-6"></p>
+                    <p id="detalle-desc" class="text-gray-600 mb-8 leading-relaxed"></p>
+                    <div class="flex items-center gap-4 mb-8">
+                        <span class="font-bold text-sm uppercase">Cantidad:</span>
+                        <div class="flex border rounded-xl overflow-hidden bg-gray-50">
+                            <button onclick="ajustarQtyDetalle(-1)" class="px-4 py-2 hover:bg-gray-200">-</button>
+                            <input type="number" id="det-qty" value="1" class="w-12 text-center bg-transparent font-bold" readonly>
+                            <button onclick="ajustarQtyDetalle(1)" class="px-4 py-2 hover:bg-gray-200">+</button>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-3">
+                        <button id="btn-checkout-directo" class="bg-[#25D366] text-white py-5 rounded-2xl font-bold uppercase shadow-xl hover:scale-[1.02] transition">Realizar mi pedido ahora</button>
+                        <button id="btn-add-carrito" class="border-2 border-[#7A8974] text-[#7A8974] py-4 rounded-2xl font-bold uppercase hover:bg-gray-50 transition">Añadir al Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="checkout-modal" class="fixed inset-0 z-[20000] hidden flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+        <div class="bg-white w-full max-w-[450px] max-h-[90vh] rounded-[2.5rem] overflow-hidden shadow-2xl flex flex-col">
+            <div class="p-5 border-b bg-gray-50 flex justify-between items-center shrink-0">
+                <h3 class="font-bold text-xs uppercase text-[#7A8974] tracking-widest">Tu Pedido</h3>
+                <button onclick="closeCheckout()" class="text-3xl text-gray-300 leading-none">&times;</button>
+            </div>
+            <div class="p-6 overflow-y-auto flex-grow custom-scroll">
+                <div id="checkout-items" class="space-y-4 mb-8"></div>
+                <form id="order-form" class="space-y-4">
+                    <input type="text" placeholder="Nombre completo *" required class="w-full p-4 bg-gray-50 border border-gray-100 rounded-2xl text-sm outline-none focus:border-[#7A8974]">
+                    <input type="tel" placeholder="WhatsApp / Celular *" required class="w-full p-4 bg-gray-50 border border-gray-100 rounded-2xl text-sm outline-none focus:border-[#7A8974]">
+                    <input type="text" placeholder="Dirección exacta *" required class="w-full p-4 bg-gray-50 border border-gray-100 rounded-2xl text-sm outline-none focus:border-[#7A8974]">
+                    <button type="submit" class="w-full bg-[#25D366] text-white py-4 rounded-2xl font-bold uppercase shadow-lg mt-4">Confirmar Pedido</button>
+                    <button type="button" onclick="closeCheckout()" class="w-full border-2 border-[#7A8974] text-[#7A8974] py-3 rounded-2xl font-bold uppercase text-[10px]">Añadir más productos</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="mobile-menu" class="fixed inset-0 w-full h-full bg-white z-[10000] flex flex-col translate-x-full transition-transform duration-300 md:hidden">
+        <div class="bg-white flex justify-between items-center p-6 border-b">
+            <span class="font-serif italic text-gray-400">Menú</span>
+            <button id="menu-close-btn" class="text-4xl text-gray-400">&times;</button>
+        </div>
+        <div class="bg-white flex flex-col px-8 space-y-2 flex-grow">
+            <a href="index.html" class="text-4xl font-serif py-6 border-b border-gray-50 text-gray-900">Inicio</a>
+            <a href="productos.html" class="text-4xl font-serif py-6 border-b border-gray-50 text-gray-900">Catálogo</a>
+            <a href="#" class="text-4xl font-serif py-6 border-b border-gray-50 text-gray-900">Contacto</a>
+        </div>
+    </div>
+
+    <footer class="bg-[#2D2D2D] text-white py-12 text-center mt-20">
+        <p class="text-xs text-gray-500">© 2026 Tefy Home. Pago contra entrega en todo Lima.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

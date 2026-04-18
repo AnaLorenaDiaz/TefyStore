@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tefy Home | Soluciones para tu hogar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-[#FAF9F6] text-[#2D2D2D]">
+
+    <div class="bg-[#7A8974] text-white py-2 px-6 z-[60] relative text-center">
+        <span class="text-[10px] font-bold tracking-widest uppercase">Pago contra entrega | Envío gratis Lima y Callao</span>
+    </div>
+
+    <nav id="main-nav" class="sticky top-0 w-full z-50 bg-white border-b border-gray-100 transition-all duration-300">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex-shrink-0">
+                <a href="index.html">
+                    <img src="img/logo2.png" alt="Tefy Home Logo" class="h-10 w-auto lg:h-12 object-contain">
+                </a>
+            </div>
+            <div class="hidden md:flex space-x-8 font-medium text-sm uppercase tracking-widest">
+                <a href="index.html" class="hover:text-[#7A8974] transition">Inicio</a>
+                <a href="productos.html" class="hover:text-[#7A8974] transition">Productos</a>
+                <a href="contacto.html" class="hover:text-[#7A8974] transition">Contacto</a>
+            </div>
+            <div class="flex items-center space-x-5">
+                <button onclick="toggleCartModal()" class="relative text-2xl focus:outline-none">
+                    🛒 <span id="cart-count" class="absolute -top-2 -right-2 bg-[#D4A373] text-white text-[10px] rounded-full w-5 h-5 flex items-center justify-center hidden">0</span>
+                </button>
+                <button id="menu-open-btn" class="md:hidden text-2xl focus:outline-none">☰</button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="fixed inset-0 w-full h-full bg-white z-[10000] flex flex-col translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+            <div class="bg-white flex justify-between items-center p-6 border-b">
+                <span class="font-serif italic text-gray-400">Menú Principal</span>
+                <button id="menu-close-btn" class="text-4xl text-gray-400">&times;</button>
+            </div>
+            <div class="bg-white flex flex-col px-8 space-y-2 flex-grow">
+                <a href="#" class="mobile-link text-4xl font-serif py-6 border-b border-gray-50 text-gray-900">Inicio</a>
+                <a href="productos.html" class="mobile-link text-4xl font-serif py-6 border-b border-gray-50 text-gray-900">Productos</a>
+                <a href="contacto.html" class="mobile-link text-4xl font-serif py-6 border-b border-gray-50 text-gray-900">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative pt-12 pb-20 lg:pt-24 lg:pb-32 overflow-hidden bg-[#FAF9F6]">
+        <div class="container mx-auto px-6 flex flex-wrap items-center">
+            <div class="w-full lg:w-1/2 mb-12 lg:mb-0">
+                <h1 class="text-5xl lg:text-7xl font-serif mb-6 leading-tight">Tu hogar, más <br> <span class="italic text-[#7A8974]">ordenado y feliz.</span></h1>
+                <div class="flex flex-col sm:flex-row gap-4 mt-8">
+                    <a href="productos.html" class="bg-[#7A8974] text-white px-8 py-4 rounded-xl font-bold text-center shadow-lg">Ver productos</a>
+                    <a href="https://wa.me/51955331703" target="_blank" class="flex items-center justify-center gap-2 bg-white text-gray-800 border border-gray-200 px-8 py-4 rounded-xl font-bold text-center hover:bg-gray-50 transition shadow-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="text-[#25D366]" viewBox="0 0 16 16">
+                            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.06 3.972L0 16l4.121-1.08a7.891 7.891 0 0 0 3.866 1.02h.003c4.368 0 7.926-3.559 7.93-7.93a7.856 7.856 0 0 0-2.322-5.687zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+                        </svg>
+                        <span>Escríbenos</span>
+                    </a>
+
+                </div>
+            </div>
+            <div class="w-full lg:w-1/2">
+                <img src="img/collage.png" class="w-full rounded-[2rem] shadow-2xl rotate-2 border-8 border-white">
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white py-10 border-y border-gray-100">
+        <div class="container mx-auto px-6 flex flex-wrap justify-around gap-8 text-center">
+            <div><p class="font-bold">🚚 Envío Gratis</p><p class="text-xs text-gray-500">En Lima y Callao</p></div>
+            <div><p class="font-bold">🤝 Pago al Recibir</p><p class="text-xs text-gray-500">Sin tarjetas, 100% seguro</p></div>
+            <div><p class="font-bold">⭐ Calidad Garantizada</p><p class="text-xs text-gray-500">Productos seleccionados</p></div>
+        </div>
+    </section>
+
+    <section id="productos" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-serif mb-12 text-center">Nuestros Favoritos</h2>
+            <div id="grid-productos" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4"></div>
+        </div>
+    </section>
+
+    <section id="pagina-detalle" class="fixed inset-0 bg-white z-[5000] hidden overflow-y-auto">
+        <div class="container mx-auto px-6 py-10 relative">
+            <button onclick="cerrarDetalle()" class="flex items-center gap-2 text-gray-500 mb-8 font-bold">← VOLVER</button>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="space-y-4">
+                    <img id="detalle-img-principal" src="" class="w-full aspect-square object-cover rounded-3xl shadow-xl">
+                    <div id="detalle-miniaturas" class="grid grid-cols-5 gap-3"></div>
+                </div>
+                <div>
+                    <h1 id="detalle-titulo" class="text-4xl font-serif mb-4"></h1>
+                    <p id="detalle-precio-new" class="text-3xl text-[#7A8974] font-bold mb-6"></p>
+                    <p id="detalle-desc" class="text-gray-600 mb-8"></p>
+                    <div class="flex items-center gap-4 mb-8">
+                        <span class="font-bold text-sm uppercase">Cantidad:</span>
+                        <div class="flex border rounded-xl overflow-hidden bg-gray-50">
+                            <button onclick="ajustarQtyDetalle(-1)" class="px-4 py-2 hover:bg-gray-200">-</button>
+                            <input type="number" id="det-qty" value="1" class="w-12 text-center bg-transparent font-bold" readonly>
+                            <button onclick="ajustarQtyDetalle(1)" class="px-4 py-2 hover:bg-gray-200">+</button>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-3">
+                        <button id="btn-checkout-directo" class="bg-[#25D366] text-white py-5 rounded-2xl font-bold uppercase shadow-xl tracking-widest">REALIZAR MI PEDIDO AHORA</button>
+                        <button id="btn-add-carrito" class="border-2 border-[#7A8974] text-[#7A8974] py-4 rounded-2xl font-bold uppercase tracking-widest">Añadir al Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="checkout-modal" class="fixed inset-0 z-[20000] hidden flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+        <div class="bg-white w-full max-w-[450px] max-h-[90vh] rounded-[2.5rem] overflow-hidden shadow-2xl flex flex-col animate-in">
+            <div class="p-5 border-b bg-gray-50 flex justify-between items-center shrink-0">
+                <h3 class="font-bold text-xs uppercase text-[#7A8974] tracking-widest">Resumen del Pedido</h3>
+                <button onclick="closeCheckout()" class="text-3xl text-gray-300 leading-none">&times;</button>
+            </div>
+            
+            <div class="p-6 overflow-y-auto flex-grow custom-scroll">
+                <div id="checkout-items" class="space-y-4 mb-8"></div>
+                
+                <form id="order-form" class="space-y-4">
+                    <input type="text" placeholder="Nombre completo *" required class="w-full p-4 bg-gray-50 border border-gray-100 rounded-2xl text-sm outline-none">
+                    <input type="tel" placeholder="WhatsApp / Celular *" required class="w-full p-4 bg-gray-50 border border-gray-100 rounded-2xl text-sm outline-none">
+                    <input type="text" placeholder="Dirección exacta *" required class="w-full p-4 bg-gray-50 border border-gray-100 rounded-2xl text-sm outline-none">
+                    
+                    <div class="flex flex-col gap-3 pt-4">
+                        <button type="submit" class="w-full bg-[#25D366] text-white py-4 rounded-2xl font-bold uppercase shadow-lg text-sm">Confirmar Pedido - Pago al Recibir</button>
+                        <button type="button" onclick="closeCheckout()" class="w-full border-2 border-[#7A8974] text-[#7A8974] py-3 rounded-2xl font-bold uppercase text-[10px]">Añadir más productos</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-[#2D2D2D] text-white pt-16 pb-8">
+    <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+            
+            <div>
+                <img src="img/logo2.png" alt="Tefy Home" class="h-10 mb-6 brightness-0 invert">
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Dedicados a transformar espacios con soluciones inteligentes y diseño moderno para el hogar.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="font-serif text-xl mb-6">Nuestra Tienda</h4>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li><a href="#" class="hover:text-[#D4A373] transition">Inicio</a></li>
+                    <li><a href="productos.html" class="hover:text-[#D4A373] transition">Catálogo Completo</a></li>
+                    <li><a href="#" class="hover:text-[#D4A373] transition">Sobre Nosotros</a></li>
+                    <li><a href="#" class="hover:text-[#D4A373] transition">Preguntas Frecuentes</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-serif text-xl mb-6">Ayuda</h4>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li><a href="#" class="hover:text-[#D4A373] transition">Políticas de Envío</a></li>
+                    <li><a href="#" class="hover:text-[#D4A373] transition">Términos y Condiciones</a></li>
+                    <li><a href="#" class="hover:text-[#D4A373] transition">Libro de Reclamaciones</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-serif text-xl mb-6">Contacto</h4>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li class="flex items-center gap-3">
+                        <span>📍</span> Lima, Perú (Envíos a todo el país)
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span>📱</span> +51 900 000 000
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <span>✉️</span> hola@tefyhome.com
+                    </li>
+                </ul>
+                <div class="flex gap-4 mt-6">
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#7A8974] transition">IG</a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#7A8974] transition">FB</a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#7A8974] transition">TK</a>
+                </div>
+            </div>
+        </div>
+
+        <hr class="border-white/10 mb-8">
+
+        <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-xs text-gray-500">
+                © 2026 Tefy Home. Todos los derechos reservados. Diseñado por una buena amiga.
+            </p>
+            <div class="flex items-center gap-4 opacity-50 grayscale">
+                <span class="text-[10px] font-bold border border-white/20 px-2 py-1 rounded">YAPE</span>
+                <span class="text-[10px] font-bold border border-white/20 px-2 py-1 rounded">VISA</span>
+                <span class="text-[10px] font-bold border border-white/20 px-2 py-1 rounded">EFECTIVO</span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <script src="js/main.js"></script>
+</body>
+</html>

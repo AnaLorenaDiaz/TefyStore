@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "nombre": "Estante Giratorio Cuadrado de 5 Niveles",
+    "sku": "TH-GIR-05",
+    "precio_old": 249.00,
+    "precio_new": 179.00,
+    "imagenPrincipal": "img/productos/Producto1.png",
+    "descripcion": "La solución definitiva para el desorden en tu cocina. Este estante cuenta con canastillas giratorias de 360 grados, permitiéndote acceder a tus productos desde cualquier ángulo.",
+    "imagenesGaleria": [
+      "img/productos/producto1-1.jpg",
+      "img/productos/producto1-2.jpg",
+      "img/productos/producto1-3.jpg"
+    ]
+  },
+  {
+    "id": 2,
+    "nombre": "Estante Plegable Premium con Ruedas",
+    "sku": "TH-PLE-03",
+    "precio_old": 349.00,
+    "precio_new": 219.00,
+    "imagenPrincipal": "img/productos/Producto2.png",
+    "descripcion": "Olvídate de las herramientas. Este estante se despliega en menos de 5 segundos. Ideal para garajes, cocinas o salas de estar.",
+    "imagenesGaleria": [
+      "img/productos/producto2-1.jpg",
+      "img/productos/producto2-2.jpg"
+    ]
+  },
+  {
+    "id": 3,
+    "nombre": "Organizador de Cubiertos Extensible",
+    "sku": "TH-ORG-CB",
+    "precio_old": 85.00,
+    "precio_new": 55.00,
+    "imagenPrincipal": "img/productos/Producto3.png",
+    "descripcion": "Maximiza el espacio de tus cajones. Este organizador se expande lateralmente para ajustarse a cualquier medida.",
+    "imagenesGaleria": [
+      "img/productos/producto3-1.jpg",
+      "img/productos/producto3-2.jpg"
+    ]
+  },
+  {
+    "id": 4,
+    "nombre": "Set de 6 Frascos Herméticos de Vidrio",
+    "sku": "TH-SET-HE",
+    "precio_old": 150.00,
+    "precio_new": 99.00,
+    "imagenPrincipal": "img/productos/Producto4.png",
+    "descripcion": "Mantén la frescura de tus cereales, menestras y pastas con sellado de silicona al vacío.",
+    "imagenesGaleria": [
+      "img/productos/producto4-1.jpg",
+      "img/productos/producto4-2.jpg"
+    ]
+  },
+  {
+    "id": 5,
+    "nombre": "Dispensador de Jabón Automático Pro",
+    "sku": "TH-DIS-AUTO",
+    "precio_old": 79.00,
+    "precio_new": 45.00,
+    "imagenPrincipal": "img/productos/Producto5.png",
+    "descripcion": "Higiene total sin contacto. Sensor infrarrojo ultra rápido y batería recargable vía USB.",
+    "imagenesGaleria": [
+      "img/productos/producto5-1.jpg",
+      "img/producto5-2.jpg"
+    ]
+  },
+  {
+    "id": 6,
+    "nombre": "Organizador de Zapatos Ajustable (Pack 6 unidades)",
+    "descripcion": "Duplica el espacio en tu clóset con estos soportes ajustables. Altura regulable para diferentes tipos de calzado, desde zapatillas hasta tacones.",
+    "precio_old": 89.00,
+    "precio_new": 59.00,
+    "imagenPrincipal": "img/productos/Producto5.png",
+    "imagenesGaleria": [
+      "img/productos/producto5-1.jpg",
+      "img/producto5-2.jpg"
+    ]
+  }
+]
